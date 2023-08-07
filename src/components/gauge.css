@@ -1,0 +1,9 @@
+.thermometer ul.thermometer__statistics li {
+    position: absolute;
+    top: initial;
+    right: initial;
+    bottom: initial;
+    left: 12px;
+    list-style: none;
+    color: white !important;
+}

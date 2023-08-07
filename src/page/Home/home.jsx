@@ -1,5 +1,5 @@
 import React from 'react';
-import HomeImage from '../assets/1.jpeg';
+import HomeImage from '../../assets/1.jpeg';
 
 const Home = () => {
   const containerStyle = {
