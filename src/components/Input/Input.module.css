@@ -1,0 +1,66 @@
+.pe-12 {
+  padding-right: 12px;
+}
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.input-container {
+  width: fit-content;
+}
+.input-group label {
+  color: var(--neutral-main);
+}
+.input-box {
+  display: flex;
+  /* gap: 1rem; */
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid #a8a8a8;
+  border-radius: 5px;
+}
+
+.input-box input {
+  display: block;
+  border: none;
+  width: 100%;
+  box-shadow: none;
+  padding: 0.6rem;
+  background: transparent;
+  color: var(--neutral-main);
+}
+
+.input-box input:-webkit-autofill {
+  /* Override the background color */
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+/* Additional styling for other browsers */
+.input-box input:-moz-autofill {
+  -moz-box-shadow: 0 0 0px 1000px white inset;
+}
+
+.input-box input:-ms-autofill {
+  background-color: white !important;
+}
+
+/*Padding Inside search-container and input field always be same */
+.search-container {
+  padding: 0.6rem;
+}
+
+.input-box:focus,
+.input-box:active{
+  box-shadow: 0 0 0 0.25rem rgb(101 167 79 / 22%) !important;
+  border-color: var(--main-color);
+}
+.input-box input:focus,
+.input-box input:active,
+.input-box input:visited {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  box-shadow: none;
+}

@@ -1,0 +1,19 @@
+/*In root we defined variables to adjust the height and width of spinerz */
+/*You can also adjust color but most os=f the time color should be main color*/
+:root {
+  --spiner-width: 2rem;
+  --spiner-height: 2rem;
+}
+.loader-wrapper {
+  block-size: 100vh;
+  inline-size: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader-wrapper__container div {
+  margin-inline-end: 1rem;
+  inline-size: var(--spiner-width);
+  block-size: var(--spiner-height);
+  color: blueviolet; /*Here Describe the var(--main-color) (main color of application)*/
+}

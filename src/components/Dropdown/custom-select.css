@@ -1,0 +1,29 @@
+.custom-select__control:hover {
+    /* Custom styles for control on hover */
+    background: black !important;
+  }
+  
+  .custom-select__control--is-focused {
+    /* Custom styles for control when focused */
+    background: yellow !important;
+  }
+  
+  .custom-select__control--menu-is-open {
+    /* Custom styles for control when menu is open */
+    background: blue !important;
+  }
+  
+  .custom-select__option--is-selected {
+    /* Custom styles for selected option */
+    background: purple !important;
+  }
+  
+  .custom-select__option--is-selected:hover {
+    /* Custom styles for selected option on hover */
+    background: orangered !important;
+  }
+  .custom-select__option--is-focused {
+    /* Custom styles for option when focused */
+    background: brown;
+  }
+  

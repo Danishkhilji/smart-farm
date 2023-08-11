@@ -1,0 +1,57 @@
+.actionButton-wrapper {
+  display: flex;
+}
+.actionButton-wrapper button {
+  border: none;
+  border-color: none;
+  outline: none;
+  background: var(--main-color);
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 14px;
+  border-radius: 0.2rem 0 0 0.2rem;
+}
+.actionButton-wrapper span {
+  padding: 4px 8px;
+  background: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 0 0.2rem 0.2rem 0;
+}
+.actionButton-wrapper span:hover,
+.actionButton-wrapper button:hover {
+  background-color: #79b468;
+  border-color: #79b468;
+}
+
+.actionButton-wrapper span:focus,
+.actionButton-wrapper button:focus {
+  box-shadow: 0 0 0 0.2rem rgba(9, 255, 0, 0.5) !important;
+}
+
+.popper {
+  top: 70%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
+  position: absolute;
+  z-index: 3;
+  background-color: #fff;
+  min-width: 90px;
+  border: 1px solid #dee2e6 !important;
+}
+.popper li {
+    padding: 0.3rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .popper li:hover {
+    color: #fff;
+    background:#7bca54;
+  }

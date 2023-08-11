@@ -1,0 +1,15 @@
+.noData__wrapper {
+  block-size: 100%;
+  min-block-size: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.noData__content {
+  text-align: center;
+}
+.noData__content p {
+  padding-block-start: 1rem;
+  margin: 0;
+}

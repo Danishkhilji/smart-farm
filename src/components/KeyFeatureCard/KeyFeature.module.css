@@ -1,0 +1,82 @@
+.card{
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s  all ease-in-out;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+.name{
+    margin-top: 1rem;
+    font-weight: 600;
+}
+.card p{
+    transition: 0.5s all ease-in-out;
+    font-weight: 600;
+}
+.card:hover p{
+    color:var(--main-color) !important ;
+}
+
+.card:hover svg{
+
+animation: swing ease-in-out 0.5s 1 alternate;
+color: var(--main-color) !important;
+
+}
+
+/*
+========
+Swing Animation 
+=======
+*/
+
+@keyframes swing {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    10% {
+      transform: rotate(10deg);
+    }
+  
+    30% {
+      transform: rotate(0deg);
+    }
+  
+    40% {
+      transform: rotate(-10deg);
+    }
+  
+    50% {
+      transform: rotate(0deg);
+    }
+  
+    60% {
+      transform: rotate(5deg);
+    }
+  
+    70% {
+      transform: rotate(0deg);
+    }
+  
+    80% {
+      transform: rotate(-5deg);
+    }
+  
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  @keyframes sonar {
+    0% {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+  
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  

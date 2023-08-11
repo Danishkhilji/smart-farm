@@ -1,0 +1,27 @@
+.popper {
+  top: 70%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  position: absolute;
+  z-index: 3;
+  background-color: #fff;
+  min-width: 90px;
+}
+.action-view {
+  cursor: pointer;
+}
+.popper li {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* .popper li:hover {
+  color: #fff;
+  background: #eee;} */
+.list-item {
+  font-size: .9rem;
+  /* border: 1px solid red; */
+}

@@ -1,0 +1,40 @@
+.custom-select {
+    /* Your custom styles for the select container */
+  }
+  
+  .custom-select__control {
+    /* Your custom styles for the select control */
+    border: 2px solid #5cace1;
+    border-radius: 8px;
+    padding: 8px;
+  
+    /* Apply additional styles when the select is focused */
+    &:focus {
+      box-shadow: 0 0 3px #5cace1;
+    }
+  }
+  
+  .custom-select__option {
+    /* Your custom styles for the select options */
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 8px;
+  }
+  
+  .custom-select__single-value {
+    /* Your custom styles for the selected value */
+    color: #5cace1;
+  }
+  
+  .custom-select__menu {
+    /* Your custom styles for the dropdown menu */
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+    /* Apply additional styles when the menu is open */
+    &[aria-expanded='true'] {
+      border: 1px solid #5cace1;
+    }
+  }
