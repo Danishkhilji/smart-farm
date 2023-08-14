@@ -54,7 +54,7 @@ const PlotGraph = () => {
         <div class="card"><GaugeComponent title="pH Level" value={phValue} /></div>
         <div class="card"><GaugeComponent  title="IDR Level" value={ldrValue} /></div>
       </div>
-      <div>
+      <div className="graph-sec">
         <div style={{ display: "flex" }}>
           <Graph data={field1Data} color="#ff7300" yAxisLabel="temp" />
           <Graph data={field2Data} color="#82ca9d" yAxisLabel="ldr" />

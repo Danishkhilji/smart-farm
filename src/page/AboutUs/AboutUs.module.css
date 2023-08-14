@@ -1,0 +1,11 @@
+.main-heading{
+    padding: 60px 0;
+    text-align: center;
+}
+.content-heading, .main-heading{
+
+    font-weight: 800;
+}
+.main-wrapper{
+    background: #bbb;
+}

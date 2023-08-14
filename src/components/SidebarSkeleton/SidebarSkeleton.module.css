@@ -26,15 +26,12 @@ Utility classes End
   scrollbar-width: none; /* Firefox */
 }
 .sidebar__sideContent {
-  width: 300px;
+  width: 230px;
   background: var(--neutral-main-bg);
   height: 100%;
 }
-.sidebar__wrapper aside::-webkit-scrollbar {
-  display: none;
-}
 .sidebar__mainContent {
-  margin-left: 300px;
+  margin-left: 230px;
   background-color: var(--neutral-main-bg);
   transition: 0.3s ease-in-out;
   height: 100vh;
@@ -42,6 +39,9 @@ Utility classes End
   width: 100%;
   scrollbar-color: transparent transparent;
   scrollbar-width: thin;
+}
+.sidebar__wrapper aside::-webkit-scrollbar {
+  display: none;
 }
 .sidebar__mainContent::-webkit-scrollbar-thumb {
   display: none;
@@ -123,7 +123,7 @@ Utility classes End
   height: 38px;
   border: 1px solid #dee2e6;
   overflow-y: hidden;
-  width: 247.19px;
+  width: 200.19px;
 }
 .searchbar-container {
   padding: 10px 15px;
@@ -336,8 +336,8 @@ list component styling
 }
 .menuContent p {
   margin-bottom: 0;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 400;
   color: #fff !important;
   white-space: nowrap;
 }
@@ -349,7 +349,6 @@ list component styling end
   .sidebar__wrapper aside {
     position: absolute !important;
     z-index: 9999;
-    background: linear-gradient(180deg, #fff 0%, #fdf0f0 100%);
   }
   .sidebar__mainContent {
     margin-left: 0;

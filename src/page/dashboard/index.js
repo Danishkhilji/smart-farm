@@ -33,8 +33,6 @@ const Dashboard2 = () => {
         <section>
           <Header className={classes["py-15"]} withLogo={false} />
          <PlotGraph />
-   
-          <Footer />
         </section>
       </SidebarSkeleton>
     </>
