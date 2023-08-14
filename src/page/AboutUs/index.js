@@ -85,7 +85,7 @@ const AboutUs = () => {
     <div className={classes["main-wrapper"]}>
       <Header />
       <Container>
-        <h1 className={classes["main-heading"]}>About us</h1>
+        <h1 className={classes["main-heading"]}>How it Works</h1>
 
         {aboutUsData?.map((data) => (
           <div key={data?.key} className={classes["content-wrapper"]}>

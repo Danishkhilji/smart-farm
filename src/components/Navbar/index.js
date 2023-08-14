@@ -48,8 +48,8 @@ const Header = ({ withLogo = true, className }) => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className={["ms-auto", classes["ps-2rem"]].join(" ")}>
             <Link className={classes["mainNavLink"]} to={`/features`}>Features</Link>
+            <Link className={classes["mainNavLink"]} to={`/about`}>How it Works </Link>
             <Link className={classes["mainNavLink"]} to={`/dashboard2`}>Dashboard</Link>
-            {/* <Link className={classes["mainNavLink"]} to={`/about`}>About </Link> */}
             <Nav.Link href="#link">
               <div className={classes["information__section"]}>
                 <div className={classes["information__content"]}></div>

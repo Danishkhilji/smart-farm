@@ -80,8 +80,6 @@ const Landing = () => {
         <Row className={classes["change-order"]}>
           <Col lg={6}>
             <div className={classes["content"]}>
-
-              <h2>About us</h2>
               <p>
                 The web application continuously gathers real-time data from
                 Ubidots IoT platform's sensors like temperature, humidity,

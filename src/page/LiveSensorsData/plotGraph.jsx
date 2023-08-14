@@ -12,60 +12,42 @@ import {
   validatePh,
   validateLdr,
 } from "../../utils/FieldRanges";
+import jsonData from "../../assets/JSON_data.json";
+import { convertDateToFormattedString } from "../../utils/dateUtils";
 
 const PlotGraph = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(jsonData); 
   const [temperatureValue, setTemperatureValue] = useState(22);
   const [phValue, setPhValue] = useState(6.2);
   const [ldrValue, setLdrValue] = useState(300);
   const [waterLevelValue, setWaterLevelValue] = useState(300);
-  const dispatch = useDispatch();
-  const notificationData = useSelector(state => state.notification); // Get the notification data from the Redux store
-console.log(notificationData,"notificationData")
-  const fetchApiData = () => {
-    
-    const channel_id = "2228063";
-    const api_key = "DHRDGVCGANT72E08";
-    const api_url = `https://api.thingspeak.com/channels/${channel_id}/feeds.json?api_key=${api_key}`;
 
-    axios
-      .get(api_url)
-      .then((response) => {
-        setData(response.data.feeds);
-        // Update gauge values
-        if (response.data.feeds.length > 0) {
-          const latestData = response.data.feeds[response.data.feeds.length - 1];
-          // setTemperatureValue(parseFloat(latestData.field1));
-          // setPhValue(parseFloat(latestData.field3));
-          // setLdrValue(parseFloat(latestData.field2));
-          // setWaterLevelValue(parseFloat(latestData.field4));
-        }
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  };
 
   useEffect(() => {
-    fetchApiData();
-    const interval = setInterval(fetchApiData, 3000000);
-    return () => clearInterval(interval);
-  }, []);
+    if (data.length > 0) {
+      const latestData = data[data.length - 1];
+      console.log(data)
+      setTemperatureValue(parseFloat(latestData.field1));
+      setPhValue(parseFloat(latestData.field3));
+      setLdrValue(parseFloat(latestData.field2));
+      setWaterLevelValue(parseFloat(latestData.field4));
+    }
+  }, [data]);
 
   const field1Data = data.map((item) => ({
-    name: item.created_at,
+    name: convertDateToFormattedString(item.created_at),
     value: parseFloat(item.field1),
   }));
   const field2Data = data.map((item) => ({
-    name: item.created_at,
+    name: convertDateToFormattedString(item.created_at),
     value: parseFloat(item.field2),
   }));
   const field3Data = data.map((item) => ({
-    name: item.created_at,
+    name: convertDateToFormattedString(item.created_at),
     value: parseFloat(item.field3),
   }));
   const field4Data = data.map((item) => ({
-    name: item.created_at,
+    name: convertDateToFormattedString(item.created_at),
     value: parseFloat(item.field4),
   }));
 
@@ -73,40 +55,7 @@ console.log(notificationData,"notificationData")
   const waterLevelAlert = validateWaterLevel(waterLevelValue);
   const phAlert = validatePh(phValue);
   const ldrAlert = validateLdr(ldrValue);
-
-
-  useEffect(() => {
-    // Check if any of the values are not "Optimal" and add their data to the notification state
-    if (temperatureAlert !== "Optimal") {
-      dispatch(addNotificationData({
-        field: 'Temperature',
-        value: temperatureValue,
-        message: temperatureAlert,
-      }));
-    }
-    if (waterLevelAlert !== "Optimal") {
-      dispatch(addNotificationData({
-        field: 'Water Level',
-        value: waterLevelValue,
-        message: waterLevelAlert,
-      }));
-    }
-    if (phAlert !== "Optimal") {
-      dispatch(addNotificationData({
-        field: 'ph',
-        value: phValue,
-        message: phAlert,
-      }));
-    }
-    if (ldrAlert !== "Optimal") {
-      dispatch(addNotificationData({
-        field: 'ldr',
-        value: ldrValue,
-        message: ldrAlert,
-      }));
-    }
-  }, [temperatureAlert, waterLevelAlert, phAlert, ldrAlert, dispatch]);
-
+console.log(field1Data,field2Data)
   return (
     <div>
       <div className="main-section">
