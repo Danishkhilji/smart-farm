@@ -10,7 +10,7 @@ import Input from "../Input";
 import classes from "./SidebarSkeleton.module.css";
 
 
-const MenuItem = ({ text, icon, path, listOfOptions = [] }) => {
+const MenuItem = ({ text, icon, path, listOfOptions = [],notificationCount =0 }) => {
   const navigate = useNavigate();
   const location = useLocation()?.pathname;
   const [menuOpen, setMenuOpen] = useState(true);
@@ -28,7 +28,7 @@ const MenuItem = ({ text, icon, path, listOfOptions = [] }) => {
           listOfOptions?.length > 0 && setMenuOpen((current) => !current);
         }}
       >
-        <div
+        {/* <div
           className={[
             classes["menuContent"],
             classes["overflow-x-hidden"],
@@ -36,6 +36,22 @@ const MenuItem = ({ text, icon, path, listOfOptions = [] }) => {
         >
           {icon && <div className={classes["menuIcon-wrapper"]}>{icon}</div>}
           <p className={classes["menu-name"]}>{text}</p>
+        </div> */}
+
+
+<div
+          className={[
+            classes["menuContent"],
+            classes["overflow-x-hidden"],
+          ].join(" ")}
+        >
+          {icon && <div className={classes["menuIcon-wrapper"]}>{icon}</div>}
+          <p className={classes["menu-name"]}>{text}</p>
+          {notificationCount > 0 && (
+            <span className={classes["notificationCount"]}>
+              {notificationCount}
+            </span>
+          )}
         </div>
 
         {listOfOptions?.length > 0 && (
@@ -86,36 +102,36 @@ const SidebarSkeleton = ({ children }) => {
     };
   }, [window.innerWidth]);
 
-  const fieldOptions = [
-    {
-      id: "1",
-      title: "Sales",
-      navigate: () => {
-        navigate("/sales");
-      },
-    },
-    {
-      id: "2",
-      title: "Sales",
-      navigate: () => {
-        navigate("/sales");
-      },
-    },
-    {
-      id: "3",
-      title: "Sales",
-      navigate: () => {
-        navigate("/sales");
-      },
-    },
-    {
-      id: "4",
-      title: "Sales",
-      navigate: () => {
-        navigate("/sales");
-      },
-    },
-  ];
+  // const fieldOptions = [
+  //   {
+  //     id: "1",
+  //     title: "Sales",
+  //     navigate: () => {
+  //       navigate("/sales");
+  //     },
+  //   },
+  //   {
+  //     id: "2",
+  //     title: "Sales",
+  //     navigate: () => {
+  //       navigate("/sales");
+  //     },
+  //   },
+  //   {
+  //     id: "3",
+  //     title: "Sales",
+  //     navigate: () => {
+  //       navigate("/sales");
+  //     },
+  //   },
+  //   {
+  //     id: "4",
+  //     title: "Sales",
+  //     navigate: () => {
+  //       navigate("/sales");
+  //     },
+  //   },
+  // ];
   return (
     <div className={classes["sidebar__wrapper"]}>
       <aside
@@ -163,7 +179,7 @@ const SidebarSkeleton = ({ children }) => {
               />
             </span>
           </div>
-          <div className={classes["inputSearch"]}>
+          {/* <div className={classes["inputSearch"]}>
             <Input
               isSearch={true}
               value={search}
@@ -178,7 +194,7 @@ const SidebarSkeleton = ({ children }) => {
                 justifyContent: "center",
               }}
             />
-          </div>
+          </div> */}
 
           <ul className={classes["sidebarList"]}>
             <li className={classes["common-links"]}>
@@ -188,7 +204,8 @@ const SidebarSkeleton = ({ children }) => {
               path={"/"}
               text={"Notification"}
               icon={<MdSpaceDashboard size={23} color="var(--neutral-main)" />}
-              fieldOptions={fieldOptions}
+              notificationCount={3}
+              // fieldOptions={fieldOptions}
             />
 
           

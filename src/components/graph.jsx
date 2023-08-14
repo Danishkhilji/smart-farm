@@ -26,6 +26,18 @@ const interpolateNaN = (data) => {
   });
 };
 
+const formatXAxisTick = (tickValue) => {
+  // Parse the input date string and format it as "dd-MM-yyyy"
+  const dateObject = new Date(tickValue);
+  const formattedDate = dateObject.toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  });
+
+  return formattedDate;
+};
+
 const Graph = ({ data, color, yAxisLabel }) => {
   const interpolatedData = interpolateNaN(data);
 
@@ -43,7 +55,9 @@ const Graph = ({ data, color, yAxisLabel }) => {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
+        <XAxis dataKey="name"
+                  tickFormatter={formatXAxisTick} // 
+                   />
         <YAxis label={{ value: yAxisLabel, angle: -90, position: "insideLeft" }} />
         <Tooltip />
         <Legend />

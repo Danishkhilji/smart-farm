@@ -7,6 +7,15 @@ Utility classes Start
 .overflow-x-hidden {
   overflow-x: hidden;
 }
+.notificationCount {
+  color: #ff6b6b; /* Light red color */
+  font-size: 14px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background-color: rgba(255, 0, 0, 0.2); /* Light red background color */
+  margin-left: 5px; /* Add some spacing to the right of the menu text */
+}
 /*
 **********************
 Utility classes End

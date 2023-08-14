@@ -23,7 +23,7 @@ const styles = {
   },
 };
 
-const TemperatureGauge = ({ value, title }) => {
+const TemperatureGauge = ({ value, title,message }) => {
   const gradientColors = {
     0: "red",
     50: "green",
@@ -45,6 +45,9 @@ const TemperatureGauge = ({ value, title }) => {
       <div style={styles.title}>
         {title}: {value}°C
       </div>
+      <div style={{ textAlign: "center", marginTop: "10px", color: message === "Optimal" ? "white" : "red" }}>
+        {message}
+      </div>  
     </div>
   );
 };

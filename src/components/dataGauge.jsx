@@ -1,7 +1,10 @@
 import React from "react";
 import ReactGauge from "react-gauge-component";
 
-const GaugeComponent = ({ value, title }) => {
+const GaugeComponent = ({ value, title,message }) => {
+
+
+  
   const gaugeOptions = {
     arcWidth: 20, // Customize the width of the radial gauge
     arcBackgroundColor: "#e0e0e0",
@@ -18,17 +21,12 @@ const GaugeComponent = ({ value, title }) => {
       subArcs: [
         {
           limit: 20,
-          color: '#EA4228',
-          showMark: true
-        },
-        {
-          limit: 40,
-          color: '#F58B19',
+          color: '#F5CD19',
           showMark: true
         },
         {
           limit: 60,
-          color: '#F5CD19',
+          color: '#5BE12C',
           showMark: true
         },
         {
@@ -39,12 +37,25 @@ const GaugeComponent = ({ value, title }) => {
       ]
     }
   };
-
+  const formatValue = (value) => value.toString();
   return (
     <div>
-      <ReactGauge {...gaugeOptions} value={value} />
-
-      <div style={{ textAlign: "center", marginTop: "10px", color: "white" }}>{title}</div>    </div>
+      <ReactGauge
+        {...gaugeOptions}
+        value={value}
+        labels={{
+          valueLabel: {
+            fontSize: 40,
+            formatTextValue: formatValue, // Use the custom format function
+          },
+        }}
+      />
+      <div style={{ textAlign: "center", marginTop: "10px", color: "white" }}>{title}</div>   
+      <div style={{ textAlign: "center", marginTop: "10px", color: message === "Optimal" ? "white" : "red" }}>
+        {message}
+      </div>  
+      
+      </div>
   );
 };
 

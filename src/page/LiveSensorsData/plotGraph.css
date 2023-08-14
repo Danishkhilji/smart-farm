@@ -28,6 +28,8 @@
     align-items: center;
     justify-content: center;
     min-width: 260px !important;
-    width: 23.5%;
+    width: 22.5%;
   }
-  
+  .graph{
+    margin-top: 40px;
+  }
